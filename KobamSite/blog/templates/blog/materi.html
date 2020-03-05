@@ -1,0 +1,102 @@
+{% include 'blog/header.html' %}
+
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/prism.css' %}"/>
+
+		<!-- top-area End -->
+ <!-- Page Content -->
+  <div class="container">
+
+    <div class="row">
+
+      <!-- Post Content Column -->
+      <div class="col-lg-8">
+
+        <!-- Title -->
+        <h1 class="mt-4">Post Title</h1>
+
+        <!-- Author -->
+        <p class="lead">
+          by
+          <a href="#">Start Bootstrap</a>
+        </p>
+
+        <hr>
+
+        <!-- Date/Time -->
+        <p>Posted on January 1, 2019 at 12:00 PM</p>
+
+        <hr>
+
+        <!-- Preview Image -->
+        <img class="img-fluid rounded" src="http://placehold.it/900x300" alt="">
+
+        <hr>
+			{% for post in posts  %}
+			<h2>{{post.title}} {{title}}</h2>
+			
+        <pre><code class="language-cpp">{{post.content}} {{content}}</code></pre>
+			<p>{{post.date_posted}}</p>
+			<p>penulis : {{post.author}}</p>
+			{% endfor %}
+
+        <hr>
+
+        <!-- Comments Form -->
+        <div class="card my-4">
+          <h5 class="card-header">Leave a Comment:</h5>
+          <div class="card-body">
+            <form>
+              <div class="form-group">
+                <textarea class="form-control" rows="3"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+
+<br> 
+
+
+        <!-- Categories Widget -->
+        <div class="card my-4">
+          <h5 class="card-header">Categories</h5>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-lg-6">
+                <ul class="list-unstyled mb-0">
+				<br>
+                  <li>
+                    <a href="#">C++</a>
+					<br>
+              </ul>
+		</div>
+              <div class="col-lg-6">
+                <ul class="list-unstyled mb-0">
+				<br>
+                  <li>
+                    <a href="#">Python</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+  </div>
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static '/js/prism.js' %}"></script>
+</body>
+
+</html>
