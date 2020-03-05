@@ -14,7 +14,7 @@ class Blog(models.Model):
 class Post(models.Model):
     title=models.CharField(max_length=100)
     content=models.TextField()
-    code=models.TextField()
+    code=models.TextField(default='')
     date_posted=models.DateTimeField(default=timezone.now)
     author=models.ForeignKey(User, on_delete=models.CASCADE)
 
