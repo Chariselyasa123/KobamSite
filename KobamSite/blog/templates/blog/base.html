@@ -58,42 +58,46 @@
     </head>
 	
 	<body>
-		<!--[if lte IE 9]>
+	<!--[if lte IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-        <![endif]-->
+<![endif]-->
 		
-		<!-- top-area Start -->
-		<header class="top-area">
-			<div class="header-area">
+	<!-- top-area Start -->
+	<header class="top-area">
+	<div class="header-area">
 				<!-- Start Navigation -->
-			    <nav class="navbar navbar-default bootsnav navbar-fixed dark no-background">
+	<nav class="navbar navbar-default bootsnav navbar-fixed dark no-background">
 
-			        <div class="container">
+	<div class="container">
 
-			            <!-- Start Header Navigation -->
-			            <div class="navbar-header">
-			                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
-			                    <i class="fa fa-bars"></i>
-			                </button>
-			                <a class="navbar-brand" href="{% url 'about-home' %}">kobam</a>
-			            </div><!--/.navbar-header-->
-			            <!-- End Header Navigation -->
+		<!-- Start Header Navigation -->
+	<div class="navbar-header">
+	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+	<i class="fa fa-bars"></i>
+	</button>
+	<a class="navbar-brand" href="{% url 'about-home' %}">kobam</a>
+			</div>
+	<!--/.navbar-header-->
+	<!-- End Header Navigation -->
 
-			            <!-- Collect the nav links, forms, and other content for toggling -->
-			            <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
-			                <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-			                <li class=" smooth-menu active"></li>
-			                    <li class="smooth-menu"><a href="{% url 'about-home'%}">About</a></li>
-			                    <li class="smooth-menu"><a href="{% url 'materi-home' %}">materi</a></li>
-			                    <li class="smooth-menu"><a href="#experience">Login</a></li>
-			                
-			            </div><!-- /.navbar-collapse -->
-	        </div><!--/.container-->
-		    </nav><!--/nav-->
-			 <!-- End Navigation -->
-			</div><!--/.header-area-->
+<!-- Collect the nav links, forms, and other content for toggling -->
+	<div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
+	<ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+	<li class=" smooth-menu active"></li>
+	<li class="smooth-menu"><a href="{% url 'about-home'%}">About</a></li>
+	<li class="smooth-menu"><a href="{% url 'menu-materi' %}">materi</a></li>
+	{% if user.is_authenticated %}
+		
+		
+		<li class="smooth-menu"><a href="{% url 'logout' %}">Logout</a></li>
+	{% endif %}
+	</div><!-- /.navbar-collapse -->
+	</div><!--/.container-->
+	</nav><!--/nav-->
+	<!-- End Navigation -->
+	</div><!--/.header-area-->
 
-		    <div class="clearfix"></div>
+ <div class="clearfix"></div>
 
 		</header><!-- /.top-area-->
 		<!-- top-area End -->
